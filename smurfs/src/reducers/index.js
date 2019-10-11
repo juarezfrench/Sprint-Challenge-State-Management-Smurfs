@@ -1,5 +1,6 @@
 import React from 'react';
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE} from '../actions';
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POSTING,
+    POST_SUCCESS, POST_FAILURE} from '../actions';
 
 
 const initialState = {
@@ -25,7 +26,7 @@ switch(action.type){
             ...state,
             isFetching: false,
             error: '',
-            quotesBox: action.payload
+            smurfDepot: action.payload
 
         }
 
@@ -36,11 +37,23 @@ switch(action.type){
         isFetching: false,
 
                     }
-default: // axios
-// .get('http://localhost:3333/smurfs')
-// .then(res => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
-// console.log('index.js -> %c res.data:', 'color:indigo',res)
-// .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }))
+    case START_POSTING:
+        return {
+            ...state,
+            isPosting: true,
+            error: '',
+        };
+        case POST_SUCCESS:
+        return {
+            ...state,
+            isPosting: false,
+        };
+        case POST_FAILURE:
+        return {
+            ...state,
+            error: action.payload,
+        };
+default: 
 
     return state;
 

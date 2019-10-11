@@ -1,32 +1,35 @@
-import React from 'react';
-import {fetchSmurfs} from '../actions'
-import { connect } from "react-redux";
+import React from "react";
+import { Card, Button } from "semantic-ui-react";
 
 const Smurf = props => {
-console.log('Smurf.js -> %cprops:', 'color: darkMagenta', props)
-    return (
-        <div>
-          
-        <h3>{props.smurfDepot.name}</h3>
-        <p>{props.smurfDepot.height}</p>
-        
-        
-       
-        </div>
-    )
-    
-    }
+	console.log("Smurf.js -> %cprops:", "color: darkMagenta", props);
+	return (
+        <div className="smurf-container">
+			{/* <Card.Group className="card-group"> */}
+			
+            	<Card className="smurf-card">
+					<Card.Content>
+						<Card.Header>{props.smurf.name}</Card.Header>
+						<Card.Meta>Smurf</Card.Meta>
+						<Card.Description>
+							{props.smurf.name} is {props.smurf.age} years old and about{" "}
+							{Math.round(parseFloat(props.smurf.height))} inches tall.
+						</Card.Description>
+					</Card.Content>
+					<Card.Content extra>
+						<div className="ui two buttons">
+							<Button basic color="yellow">
+								Edit
+							</Button>
+							<Button basic color="red">
+								Delete
+							</Button>
+						</div>
+					</Card.Content>
+				</Card>
+			{/* </Card.Group> */}
+		</div>
+	);
+};
 
-    // export default Smurf;{name: "Brainey", age: 200, height: "5cm", id: 0}
-    const mapStatetoProps = state => {
-        return {
-            smurfDepot: state.smurfDepot,
-            isFetching: state.isFetching,
-            error: state.error
-        };
-    };
-    
-    export default connect(
-        mapStatetoProps,
-        {fetchSmurfs}
-    )(Smurf);
+export default Smurf;

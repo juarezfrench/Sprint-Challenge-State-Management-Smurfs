@@ -4,10 +4,11 @@ import Smurf from '../components/Smurf'
 import {fetchSmurfs} from '../actions'
 
 const SmurfDepot = props => {
-console.log('SmurfDepot.js -> %cprops:', 'color:peru', props)
+console.log('SmurfDepot.js -> %cprops:', 'color:limeGreen', props)
 
 
     useEffect(() => {
+        console.log('useEffect here.')
         props.fetchSmurfs()
         // fetchSmurfs()
        
@@ -15,6 +16,9 @@ console.log('SmurfDepot.js -> %cprops:', 'color:peru', props)
     if (props.isFetching) {
     return <h2>Loading Smurfs...</h2>
     }
+    // console.log('SmurfDepot.js -> %cprops.smurfDepot:', 'color: limeGreen', props.smurfDepot)
+    
+    
 	return (
     <div>
             {props.error && <p>props.error</p>}

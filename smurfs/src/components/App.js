@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Smurf from './Smurf';
 import SmurfDepot from './SmurfDepot'
+import SmurfForm from './SmurfForm'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <h1>Smurfs!</h1>
       </header>
       <SmurfDepot/>
-      <Smurf/>
+      <SmurfForm/>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { postSmurf, getSmurf } from '../store/actions';
+import { postSmurfs, fetchSmurfs } from '../actions/index';
 
-function SmurfForm() {
+const SmurfForm = (props) => {
   const [newSmurf, setNewSmurf] = useState({});
   const dispatch = useDispatch();
   const isPosting = useSelector(state => state.isPosting);
@@ -13,15 +13,16 @@ function SmurfForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(postData(newSmurf));
+    dispatch(postSmurfs(newSmurf));
+   
   };
 
-  useEffect(() => dispatch(getSmurf()), [isPosting]);
+  useEffect(() => dispatch(fetchSmurfs()), [isPosting]);
 
   return (
     // <Form>
     <div className='smurf-form'>
-      <h2>Invite new Smurf!</h2>
+      <h2>Add a new Smurf!</h2>
       <input
         type='text'
         name='name'
@@ -49,8 +50,10 @@ function SmurfForm() {
         placeholder='...image url (optional)'
         onChange={handleChange}
       /> */}
-      <button onClick={handleSubmit}>Subsmurf!</button>
+      <button onClick={handleSubmit}>Add this smurf!</button>
     </div>
     // </Form>
   );
 }
+
+export default SmurfForm

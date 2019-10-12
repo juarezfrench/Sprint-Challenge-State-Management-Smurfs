@@ -15,7 +15,7 @@ function App() {
       </header>
       <SmurfDepot/>
       <SmurfForm/>
-      <SmurfEditor/>
+      {/* <SmurfEditor/> */}
     </div>
   );
 }

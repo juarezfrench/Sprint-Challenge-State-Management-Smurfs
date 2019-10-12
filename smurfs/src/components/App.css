@@ -1,11 +1,11 @@
 .App {
   text-align: center;
   display:flexbox;
-  width: 90%;
+  width: 100%;
   margin: 0 5% 0 0 ;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  border: 2px solid blue;
+  
  
 }
 
@@ -14,6 +14,10 @@
   width: 50%;
   left:30%;
   top:10%;
+}
+
+.add-smurf {
+  margin-top: 3%;
 }
 
 .App-logo {

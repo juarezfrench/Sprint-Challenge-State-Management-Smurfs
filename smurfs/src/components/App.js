@@ -1,9 +1,10 @@
 
 import React from 'react';
 import './App.css';
-import Smurf from './Smurf';
+
 import SmurfDepot from './SmurfDepot'
 import SmurfForm from './SmurfForm'
+import SmurfEditor from './SmurfEditor'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       </header>
       <SmurfDepot/>
       <SmurfForm/>
+      <SmurfEditor/>
     </div>
   );
 }

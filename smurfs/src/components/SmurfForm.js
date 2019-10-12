@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postSmurfs, fetchSmurfs } from '../actions/index';
+import {Button} from 'semantic-ui-react'
 
 const SmurfForm = (props) => {
   const [newSmurf, setNewSmurf] = useState({});
@@ -50,7 +51,8 @@ const SmurfForm = (props) => {
         placeholder='...image url (optional)'
         onChange={handleChange}
       /> */}
-      <button onClick={handleSubmit}>Add this smurf!</button>
+     
+      <Button className='add-smurf' primary onClick={handleSubmit}>Add this smurf!</Button>
     </div>
     // </Form>
   );

@@ -35,6 +35,7 @@ export default function SmurfEditor() {
   useEffect(() => dispatch(fetchSmurfs()), [isEditing]);
 
   return (
+    
     <div className='smurf-form'>
       <h2>Change a Smurf!</h2>
       <select onChange={handleSelect}>
